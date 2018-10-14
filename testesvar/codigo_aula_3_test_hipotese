@@ -60,7 +60,7 @@ poder.teste.chisq.media = function(amostra, alpha = .05, sigma_zero)
                                              df = df, lower.tail = FALSE)
   
   poder = 1 - beta
-  results = list(poder = poder, beta = beta)
+  results = list(poder = poder, beta = beta, critico1 = k1, critico2 = k2)
   print(results)
   }
 
