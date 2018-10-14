@@ -52,7 +52,7 @@ poder.teste.chisq.media = function(amostra, alpha = .05, sigma_zero)
   
   {
   vari = var(amostra)
-  df = length(amostra - 1)
+  df = length(amostra) - 1
   k1 = qchisq(p = (alpha / 2), df = df)
   k2 = qchisq(p = 1 -(alpha / 2), df = df)
   beta = pchisq(q = (sigma_zero*k1/vari), 
