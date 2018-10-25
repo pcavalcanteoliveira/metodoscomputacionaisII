@@ -23,10 +23,14 @@ dados %>%
 ## 2
 n = 3
 
-S = ((rnorm(n = n, mean = 0, sd = 5) - 0)**2)/(n-1)
-coisa = (n-1)*S/25
+S = vector()
+for(i in 1:25000) {
 
-data = data.frame(coisa)
+  x = rnorm(n = n, mean = 0, sd = 5)
+  S[i] =  var(x)*(n/(n-1))/25
+}
+
+data = data.frame(coisa = S)
 
 data %>%
   ggplot(aes(x = coisa))+
@@ -34,3 +38,28 @@ data %>%
   stat_function(fun = dchisq, args = list(df = n - 1), 
                 geom = "line", size = 2, color = "red" )
 
+
+
+### poder do teste para variância
+
+poder = function(x, sigmazero, alpha = .05) 
+  {
+  df = length(x) - 1
+  sigma = var(x)
+  termo1 = sigma*qchisq(p = alpha/2, df = df)/sigmazero
+  termo2 = sigma*qchisq(p = 1 - alpha/2, df = df)/sigmazero
+  
+  P1 = pchisq(termo1, df = df)
+  P2 = pchisq(termo2, df = df, lower.tail = FALSE)
+  
+  pi = P1 + P2
+  
+  return(pi)
+  
+  }
+  
+poder(glicemia, sigmazero = 30 )
+
+ggplot(data.frame(x = c(0,120)), aes(x))+ 
+  stat_function(fun = poder, args = list(x = glicemia), 
+                geom = "line", size = 2)
