@@ -12,6 +12,7 @@
 .gitignore text
 .md text
 .Rmd text
+.html text
 static/* linguist-vendored
 public/* linguist-vendored
 .Rproj.user/* linguist-vendored
