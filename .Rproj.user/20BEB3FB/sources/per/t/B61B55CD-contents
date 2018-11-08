@@ -43,3 +43,7 @@ names(read_delim("tblT000844C26.txt",delim = ","))
 vemos um problema ainda maior!
 
 Isso porque eles n?o foram salvos no mesmo encoding al?m de serem totalmentes diferentes no terceiro caso.
+
+# Uma história do encoding
+
+O encoding como conhecemos hoje nasce com Unicode. À época, era uma maneira de padronizar códigos para se referir a caracteres. O diferencial do Unicode às maneiras que vinham antes era que agora um *A*, _A_ e A eram expressos como o mesmo símbolo, A maísculo. O trabalho de estilização da fonte era separado e isso gerou enormes facilidades para programar 
