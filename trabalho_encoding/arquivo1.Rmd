@@ -46,6 +46,6 @@ Isso porque eles n?o foram salvos no mesmo encoding al?m de serem totalmentes di
 
 # Uma história do encoding
 
-O encoding como conhecemos hoje nasce com Unicode. À época, era uma maneira de padronizar códigos para se referir a caracteres. O diferencial do Unicode às maneiras que vinham antes era que agora um *A*, _A_ e A eram expressos como o mesmo símbolo, A maísculo. O trabalho de estilização da fonte era separado e isso gerou enormes facilidades para programar. 
+O encoding como conhecemos hoje tem suas origens no Unicode. À época, era uma maneira de padronizar códigos para se referir a caracteres. O diferencial do Unicode às maneiras que vinham antes era que agora um *A*, _A_ e A eram expressos como o mesmo símbolo, A maísculo. O trabalho de estilização da fonte era separado e isso gerou enormes facilidades para programar. 
 
 O unicode é como uma grande tabela, em que designamos um símbolo com algum código como U+0639. Nos referimos a esses símbolos como "code points". E daí surge o primeiro Encoding de fato, UTF-8. O diferencial do UTF-8 era de fato armazenar a informação com a referência ao code point correto em um byte de um 8 bits de maneira que texto velho em inglês codificado em ASCII permanecesse igual, porém com suporte para caracteres especiais. 
