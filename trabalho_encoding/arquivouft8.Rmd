@@ -1,0 +1,44 @@
+---
+title: "Encoding"
+author: "Luiz Henrique"
+date: "4 de novembro de 2018"
+output:
+  beamer_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Encoding de um arquivo
+Encoding é uma forma de leitura e gravação de arquivos.
+
+Este trabalho tratará de encoding de texto,para leitura e escrita de characteres, usado em banco de dados, sua diversidade e os possíveis problemas que poderão trazer para o usuário que manipula esses dados.
+
+Como exemplo pegamos um arquivo vindo dos EUA
+(https://www.denvergov.org/opendata/dataset/city-and-county-of-denver-traffic-accidents)
+
+```{r cars,warning=FALSE,message=FALSE}
+getwd()
+library(readr)
+names(read_csv("traffic_accidents.csv"))
+```
+
+Agora tomando a leitura de um arquivo vindo do portal da transparência do Brasil(http://www.portaltransparencia.gov.br/download-de-dados/viagens)
+
+```{r,message=FALSE,warning=FALSE}
+names(read_csv2("2017_Passagem.csv"))
+
+```
+vemos diversos problemas da leitura desse arquivo, pois o encoding usado para ler está diferente do que foi usado para salvar o arquivo.
+
+Agora se tomarmos um terceiro arquivo vindo do governo do Japão(https://www.e-stat.go.jp/gis/statmap-search?page=2&type=1&toukeiCode=00200552&toukeiYear=2014&aggregateUnit=A&serveyId=A002005522014&statsId=T000844)
+```{r,message=FALSE,warning=FALSE}
+names(read_delim("tblT000844C26.txt",delim = ","))
+
+```
+vemos um problema ainda maior!
+
+Isso porque eles não foram salvos no mesmo encoding além de serem totalmentes diferentes no terceiro caso.
+
+<div>
