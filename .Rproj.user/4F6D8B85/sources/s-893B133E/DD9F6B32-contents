@@ -1,5 +1,5 @@
 ### TESTES DE ADERENCIA
-
+### TESTAR SE DADOS ADEREM À UMA DISTRIBUIÇÃO ESPECIFICADA
 
 ### UMA PRIMEIRA APLICAÇÃO EM EQUILIBRIO DE HARDY-WEINBERG
 library(readr)
@@ -45,3 +45,27 @@ teste3 = chisq.test(table(amostra$amost3),
 plot(dpois(0:25, 10))
 
 
+################# TESTE DE INDEPENDÊNCIA
+############# TESTAS SE AMOSTRAS SÃO INDEPENDENTES
+
+## produtos de 3 fábricas, podem ser defeituosos ou não
+
+tabela = matrix(c(8,62,15,67,11,57),
+                nrow= 2, 3)
+tabela
+
+chisq.test(tabela, correct = FALSE)
+## não rejeitamos a hipotese nula de que as probabilidades de cada evento são
+## os produtos das marginais, a amostra parece ser independente
+
+##################### TESTE DE HOMOGENEIDADE
+#### TESTAR SE UMA PROPRIEDADE É HOMOGENEA ENTRE SUBGRUPOS DE UMA AMOSTRA
+
+## produtos de 3 fábricas, exatamente 80 de cada
+
+tabela2 = matrix(c(8,72,15,65,11,69),
+                 nrow= 2, 3)
+tabela2
+
+chisq.test(tabela2, correct = FALSE) ## não rejeitamos a hipotese nula
+# a amostra parece ser homogênea entre as categorias

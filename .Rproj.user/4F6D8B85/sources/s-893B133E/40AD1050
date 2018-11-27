@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543326623014.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3817747761",
+    "id" : "40AD1050",
+    "lastKnownWriteTime" : 1543328285,
+    "last_content_update" : 1543328285527,
+    "path" : "C:/Users/pedro/Desktop/metodoscomputacionaisII/aula15_testes_chi_quadrado/aula15_testeschiquad.R",
+    "project_path" : "aula15_testes_chi_quadrado/aula15_testeschiquad.R",
+    "properties" : {
+        "cursorPosition" : "78,7",
+        "scrollLine" : "52"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
