@@ -11,7 +11,9 @@ tempo %>%
 
 tempo %>%
   group_by(Marca) %>%
-  summarise(Media = mean(tempovida), sd = sd(tempovida), N = n())
+  summarise(Media = mean(tempovida),
+            sd = sd(tempovida), 
+            N = n())
 
 tempo %>%
   ggplot(aes(sample = tempovida)) + 
