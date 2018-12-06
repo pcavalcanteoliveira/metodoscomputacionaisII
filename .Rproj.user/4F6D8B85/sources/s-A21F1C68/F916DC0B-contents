@@ -1,6 +1,9 @@
 ## Aula 16 - ANOVA
 library(tidyverse)
+
 tempo = read_csv2("Tempo Vida.csv")
+
+##########
 
 tempo %>%
   ggplot(aes(x = Marca, y = tempovida)) +
