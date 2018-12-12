@@ -173,9 +173,9 @@ barra %>%
   ggplot(aes(x = menstruacao)) +
   geom_bar(aes(y = Media), stat = "identity", fill = "light blue")
 
-anovamenstru = aov(cancer ~ menstruacao,
-                   data = cancer)
-summary(anovamenstru) # o modelo também sugere
+chisq.test(table(cancer$cancer, cancer$menstruacao),
+           correct = FALSE) # evidências de dependência
+
 
 modelomenstru = lm(cancer ~ menstruacao + peso + grauparentesco,
                    data = cancer)
